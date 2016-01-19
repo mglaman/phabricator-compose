@@ -9,7 +9,7 @@ phabricator:
     environment:
       PLATFORM_DOCKER: commerce2x
       PHP_IDE_CONFIG: serverName=commerce2x.platform
-      PHABRICATOR_MYSQL_PASS: root,
+      PHABRICATOR_MYSQL_PASS: root
       PHABRICATOR_MYSQL_USER: root
       PHABRICATOR_MYSQL_HOST: mariadb
       PHABRICATOR_URI: http://phabricator.platform
