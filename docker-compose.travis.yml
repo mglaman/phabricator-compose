@@ -1,0 +1,8 @@
+phabricator:
+  command: 'bin/config set mysql.host $PHABRICATOR_MYSQL_HOST \
+    && bin/config set mysql.user $PHABRICATOR_MYSQL_USER \
+    && bin/config set mysql.pass $PHABRICATOR_MYSQL_PASS \
+    && bin/config set phabricator.base-uri $PHABRICATOR_URI \
+    && bin/storage --force upgrade \
+    && bin/phd start \
+    && php-fpm --allow-to-run-as-root --daemonize'
