@@ -7,10 +7,12 @@ RUN apt-get update && apt-get install -y \
         libmcrypt-dev \
         libpng12-dev \
         libxml2-dev \
-        php5-apcu \
     && docker-php-ext-install mcrypt pdo_mysql mysql mysqli mbstring opcache soap bcmath pcntl \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install gd
+
+RUN pecl install apcu-4.0.10 \
+    && echo extension=apcu.so > /usr/local/etc/php/conf.d/apcu.ini
 
 # Install Pygments
 RUN apt-get update && apt-get install -y python-pip \
