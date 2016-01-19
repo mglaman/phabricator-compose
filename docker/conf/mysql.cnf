@@ -22,6 +22,7 @@ explicit_defaults_for_timestamp
 sql_mode=STRICT_ALL_TABLES
 ft_boolean_syntax=' |-><()~*:""&^'
 ft_min_word_len=3
+ft_stopword_file=/var/platform/phabricator/resources/sql/stopwords.txt
 
 # Instead of skip-networking the default is now to listen only on
 # localhost which is more compatible and is not less secure.
