@@ -1,6 +1,10 @@
 phabricator:
     build: docker/images/phabricator
-    volumes: ['./docker/conf/fpm.conf:/usr/local/etc/php-fpm.conf', './:/var/platform', './docker/conf/php.ini:/usr/local/etc/php/conf.d/local.ini']
+    volumes:
+      - './docker/conf/fpm.conf:/usr/local/etc/php-fpm.conf'
+      - './:/var/platform'
+      - './docker/repos:/var/repo'
+      - './docker/conf/php.ini:/usr/local/etc/php/conf.d/local.ini'
     links: [mariadb]
     environment:
       PLATFORM_DOCKER: commerce2x

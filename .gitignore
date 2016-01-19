@@ -2,3 +2,4 @@ arcanist
 libphutil
 phabricator
 docker/data
+docker/repos
