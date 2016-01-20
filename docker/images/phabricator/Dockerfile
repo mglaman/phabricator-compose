@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install gd
 
 RUN pecl install apcu-4.0.10 \
-    && echo extension=apcu.so > /usr/local/etc/php/conf.d/apcu.ini
+    && echo "extension=apcu.so" > /usr/local/etc/php/conf.d/apcu.ini
 
 # Install Pygments
 RUN apt-get update && apt-get install -y python-pip \
@@ -25,6 +25,9 @@ RUN git clone https://github.com/phacility/libphutil.git \
   && git clone https://github.com/phacility/arcanist.git \
   && git clone https://github.com/phacility/phabricator.git \
   && mkdir -p /var/repo
+
+VOLUME ["/var/www/html", "/var/repo"]
+
 WORKDIR /var/www/html/phabricator
 # There is not a way to mark container dependencies, so we do this for now as a quick hack.
 CMD echo "Sleeping for database container" && sleep 10s \
