@@ -1,0 +1,9 @@
+{
+  "phabricator.base-uri": "http://phabricator.platform",
+  "mysql.pass": "root",
+  "mysql.user": "root",
+  "mysql.host": "mariadb",
+  "policy.allow-public": false,
+  "pygments.enabled": true,
+  "phabricator.timezone": "America/Chicago"
+}

@@ -3,6 +3,7 @@ phabricator:
     volumes:
       - './docker/conf/fpm.conf:/usr/local/etc/php-fpm.conf'
       - './docker/conf/php.ini:/usr/local/etc/php/conf.d/local.ini'
+      - './docker/conf/phab.json:/var/www/html/phabricator/conf/local/local.json'
       - './docker/repos:/var/repo'
     links: [mariadb]
     environment:

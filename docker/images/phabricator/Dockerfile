@@ -31,10 +31,6 @@ VOLUME ["/var/www/html", "/var/repo"]
 WORKDIR /var/www/html/phabricator
 # There is not a way to mark container dependencies, so we do this for now as a quick hack.
 CMD echo "Sleeping for database container" && sleep 10s \
-  && bin/config set mysql.host $PHABRICATOR_MYSQL_HOST \
-  && bin/config set mysql.user $PHABRICATOR_MYSQL_USER \
-  && bin/config set mysql.pass $PHABRICATOR_MYSQL_PASS \
-  && bin/config set phabricator.base-uri $PHABRICATOR_URI \
   && bin/storage --force upgrade \
   && bin/phd start --force \
   && php-fpm --allow-to-run-as-root
